@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Úkol: Diagnostika jádra / Správa zásob</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="taskTitle">Úkol</h1>
+    <p id="taskDescription"></p>
+
+    <div id="diagnostika" class="task-section hidden">
+      <label for="textInput">Zadej přesně tento řetězec:</label>
+      <p id="diagnostikaText">Diagnostika probíhá...</p>
+      <textarea id="textInput" placeholder="Zadej text..."></textarea>
+      <button onclick="checkDiagnostika()">Odevzdat</button>
+    </div>
+
+    <div id="zasoby" class="task-section hidden">
+      <label for="soupInput">Kolik máme porcí guláše?</label>
+      <input type="number" id="soupInput" placeholder="Zadej číslo">
+      <button onclick="checkZasoby()">Zkontrolovat</button>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
