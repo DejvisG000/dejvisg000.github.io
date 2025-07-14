@@ -10,7 +10,7 @@
   <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
   <nav class="menu" id="menu">
     <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
-    <button onclick="zmenStranku('sprava')">Správa zásob</button>
+    <button onclick="zmenStranku('sprava')">Bezpečnostní kód</button>
     <button onclick="zmenStranku('spojovani')">Spojování drátků</button>
   </nav>
 
@@ -27,41 +27,7 @@
     <p id="vysledek"></p>
   </div>
 
-  <script>
-    const menu = document.getElementById("menu"); //menu
-
-    function odemknoutMenu() {
-      const kod = prompt("Zadej kód pro přístup k menu:");
-      if (kod === "1234") {
-        menu.style.display = "flex";
-      } else {
-        alert("Nesprávný kód.");
-      }
-    }
-
-    function zmenStranku(nazev) {
-      if (nazev === 'sprava') {
-        window.location.href = "sprava_zasob.html";
-      } else if (nazev === 'diagnostika') {
-        window.location.href = "diagnostika.html";
-      } else if (nazev === 'spojovani') {
-        window.location.href = "index.html";
-      }
-    } 
-      //menu konec
-
-
-    function overZasobu() {
-      const input = document.getElementById("zasoba");
-      const vysledek = document.getElementById("vysledek");
-      if (input.value && parseInt(input.value) == 5694) {
-        vysledek.textContent = "✔️ Úkol splněn.";
-        vysledek.style.color = "#00ff99";
-      } else {
-        vysledek.textContent = "Špatný kód.";
-        vysledek.style.color = "#ff4444";
-      }
-    }
-  </script>
+  <script src="system.js"></script>
+  <script src="bezp.js"></script>
 </body>
 </html>
