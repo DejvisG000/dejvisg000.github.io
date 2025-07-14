@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bezpečnostní kód</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+  <nav class="menu" id="menu">
+    <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
+    <button onclick="zmenStranku('sprava')">Správa zásob</button>
+  </nav>
+
+  <div class="container">
+    <h1>Bezpečnostní kód</h1>
+    <p>Napiš zde bezpečnostní kód pro odemčení systému.</p>
+
+    <div class="task-section">
+      <label for="zasoba">Zadej bezpečnostní kód:</label>
+      <input type="number" id="zasoba" />
+      <button onclick="overZasobu()">Odeslat</button>
+    </div>
+
+    <p id="vysledek"></p>
+  </div>
+
+  <script>
+    const menu = document.getElementById("menu"); //menu
+
+    function odemknoutMenu() {
+      const kod = prompt("Zadej kód pro přístup k menu:");
+      if (kod === "1234") {
+        menu.style.display = "flex";
+      } else {
+        alert("Nesprávný kód.");
+      }
+    }
+
+    function zmenStranku(nazev) {
+      if (nazev === 'sprava') {
+        window.location.href = "sprava_zasob.html";
+      } else if (nazev === 'diagnostika') {
+        window.location.href = "diagnostika.html";
+      }
+    } 
+      //menu konec
+
+
+    function overZasobu() {
+      const input = document.getElementById("zasoba");
+      const vysledek = document.getElementById("vysledek");
+      if (input.value && parseInt(input.value) == 5694) {
+        vysledek.textContent = "✔️ Úkol splněn.";
+        vysledek.style.color = "#00ff99";
+      } else {
+        vysledek.textContent = "Špatný kód.";
+        vysledek.style.color = "#ff4444";
+      }
+    }
+  </script>
+</body>
+</html>

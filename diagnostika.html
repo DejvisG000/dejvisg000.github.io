@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostika jádra</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .progress-container {
+      width: 100%;
+      background-color: #444;
+      border-radius: 10px;
+      margin-top: 15px;
+      height: 25px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #1abc9c;
+      width: 0%;
+      transition: width 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+  <nav class="menu" id="menu">
+    <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
+    <button onclick="zmenStranku('sprava')">Správa zásob</button>
+  </nav>
+  <div class="container">
+
+    <h1>Diagnostika jádra</h1>
+    <p>Spusť diagnostiku a zjisti, zda je vše v pořádku.</p>
+
+    <div class="task-section">
+      <p id="diagnostikaText">Připraveno ke spuštění diagnostiky...</p>
+      <button onclick="spustitDiagnostiku()">Spustit diagnostiku</button>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const menu = document.getElementById("menu"); //menu
+
+    function odemknoutMenu() {
+      const kod = prompt("Zadej kód pro přístup k menu:");
+      if (kod === "1234") {
+        menu.style.display = "flex";
+      } else {
+        alert("Nesprávný kód.");
+      }
+    }
+
+    function zmenStranku(nazev) {
+      if (nazev === 'sprava') {
+        window.location.href = "sprava_zasob.html";
+      } else if (nazev === 'diagnostika') {
+        window.location.href = "diagnostika.html";
+      }
+    }  //menu konec
+
+
+    const diagnostikaText = document.getElementById("diagnostikaText");
+    const result = document.getElementById("result");
+    const progressContainer = document.getElementById("progressContainer");
+    const progressBar = document.getElementById("progressBar");
+
+    function spustitDiagnostiku() {
+      diagnostikaText.textContent = "Probíhá diagnostika systému...";
+      result.textContent = "";
+      progressBar.style.width = "0%";
+      progressContainer.style.display = "block";
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 1;
+        progressBar.style.width = progress + "%";
+        if (progress >= 100) {
+          clearInterval(interval);
+          diagnostikaText.textContent = "Vše je v pořádku.";
+          result.textContent = "✔️ Úkol splněn.";
+          result.style.color = "#00ff99";
+        }
+      }, 100); // 100 * 100ms = 10 sekund
+    }
+  </script>
+</body>
+</html>
