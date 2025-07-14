@@ -7,26 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1 id="taskTitle">Úkol</h1>
-    <p id="taskDescription"></p>
+  <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+  <nav class="menu" id="menu">
+    <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
+    <button onclick="zmenStranku('sprava')">Správa zásob</button>
+    <button onclick="zmenStranku('spojovani')">Spojování drátků</button>
+  </nav>
 
-    <div id="diagnostika" class="task-section hidden">
-      <label for="textInput">Zadej přesně tento řetězec:</label>
-      <p id="diagnostikaText">Diagnostika probíhá...</p>
-      <textarea id="textInput" placeholder="Zadej text..."></textarea>
-      <button onclick="checkDiagnostika()">Odevzdat</button>
-    </div>
 
-    <div id="zasoby" class="task-section hidden">
-      <label for="soupInput">Kolik máme porcí guláše?</label>
-      <input type="number" id="soupInput" placeholder="Zadej číslo">
-      <button onclick="checkZasoby()">Zkontrolovat</button>
-    </div>
+  <script>
+    const menu = document.getElementById("menu"); //menu
 
-    <p id="result"></p>
-  </div>
+    function odemknoutMenu() {
+      const kod = prompt("Zadej kód pro přístup k menu:");
+      if (kod === "1234") {
+        menu.style.display = "flex";
+      } else {
+        alert("Nesprávný kód.");
+      }
+    }
 
-  <script src="script.js"></script>
+    function zmenStranku(nazev) {
+      if (nazev === 'sprava') {
+        window.location.href = "sprava_zasob.html";
+      } else if (nazev === 'diagnostika') {
+        window.location.href = "diagnostika.html";
+      } else if (nazev === 'spojovani') {
+        window.location.href = "index.html";
+      }
+    }  //menu konec
+  </script>
 </body>
 </html>

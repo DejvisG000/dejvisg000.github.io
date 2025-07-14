@@ -11,6 +11,7 @@
   <nav class="menu" id="menu">
     <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
     <button onclick="zmenStranku('sprava')">Správa zásob</button>
+    <button onclick="zmenStranku('spojovani')">Spojování drátků</button>
   </nav>
 
   <div class="container">
@@ -43,6 +44,8 @@
         window.location.href = "sprava_zasob.html";
       } else if (nazev === 'diagnostika') {
         window.location.href = "diagnostika.html";
+      } else if (nazev === 'spojovani') {
+        window.location.href = "index.html";
       }
     } 
       //menu konec
