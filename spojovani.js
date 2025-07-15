@@ -49,7 +49,7 @@
 
     function checkComplete() {
       if (Object.keys(connections).length === 4) {
-        document.getElementById("success").textContent = "✔️ Úkol splněn.";
+        document.getElementById("success").textContent = "✔️ Úkol splněn. Systém restartován";
         resetPoDesetiSekundach()
       }
     }

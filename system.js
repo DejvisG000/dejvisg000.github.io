@@ -22,6 +22,8 @@ const menu = document.getElementById("menu"); //menu
         window.location.href = "diagnostika.html";
       } else if (nazev === 'spojovani') {
         window.location.href = "index.html";
+      } else if (nazev === 'asteroidy') {
+        window.location.href = "asteroidy.html";
       }
     } 
       //menu konec
