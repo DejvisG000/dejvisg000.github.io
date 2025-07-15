@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalibrace motoru</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kalibrace.css">
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+    <nav class="menu" id="menu">
+    <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
+    <button onclick="zmenStranku('sprava')">Bezpečnostní kód</button>
+    <button onclick="zmenStranku('spojovani')">Spojování drátků</button>
+    <button onclick="zmenStranku('asteroidy')">Sestřel asteroidy</button>
+    <button onclick="zmenStranku('kalibrace')">Kalibrace motoru</button>
+    </nav>
+    
+ <div class="task-section" style="max-width: 400px; margin: 20px auto;">
+  <h2>Kalibrace motoru</h2>
+  <p>Nastav všechny tři posuvníky co nejblíže k cílové značce (modrá čára).</p>
+
+  <label for="slider1">Motor 1:</label>
+  <div class="slider-wrapper">
+    <input type="range" id="slider1" min="0" max="100" value="50">
+    <div class="target-marker" style="left: 70%;"></div>
+  </div>
+  
+  <label for="slider2">Motor 2:</label>
+  <div class="slider-wrapper">
+    <input type="range" id="slider2" min="0" max="100" value="50">
+    <div class="target-marker" style="left: 70%;"></div>
+  </div>
+  
+  <label for="slider3">Motor 3:</label>
+  <div class="slider-wrapper">
+    <input type="range" id="slider3" min="0" max="100" value="50">
+    <div class="target-marker" style="left: 70%;"></div>
+  </div>
+  
+  <button id="checkBtn">Zkontrolovat kalibraci</button>
+  
+  <div id="result"></div>
+</div>
+
+    <script src="system.js"></script>
+    <script src="kalibrace.js"></script>
+</body>
+</html>
