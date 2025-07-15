@@ -3,24 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sestřelování asteroidů</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    canvas {
-      display: block;
-      margin: 0 auto;
-      background: black;
-      border: 2px solid white;
-    }
-    .intro {
-      text-align: center;
-      margin-top: 40px;
-      color: white;
-    }
-  </style>
+  <title>Číselný úkol</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cisla.css">
 </head>
 <body>
-  <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+
+    <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
     <nav class="menu" id="menu">
     <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
     <button onclick="zmenStranku('sprava')">Bezpečnostní kód</button>
@@ -31,16 +20,18 @@
     <button onclick="zmenStranku('cisla')">Číselný úkol</button>
     </nav>
 
-  <div class="intro">
-    <h1>Sestřeluj asteroidy</h1>
-    <p>Znič 10 asteroidů kliknutím, abys splnil úkol.</p>
+
+  <div class="container">
+        <h1>Klikni na čísla od 1 do 10</h1> 
+        <div class="task-section">
+            <div class="grid" id="grid"></div>
+            <div id="success"></div>
+        </div>     
   </div>
+  
+  
 
-  <canvas id="gameCanvas" width="800" height="500"></canvas>
-
-  <p id="success" style="text-align: center; color: lime; font-weight: bold;"></p>
-
+  <script src="cisla.js"></script>
   <script src="system.js"></script>
-  <script src="asteroidy.js"></script>
 </body>
 </html>

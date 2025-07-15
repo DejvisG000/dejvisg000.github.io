@@ -28,6 +28,8 @@ const menu = document.getElementById("menu"); //menu
         window.location.href = "kalibrace.html";
       } else if (nazev === 'sekvence') {
         window.location.href = "sekvence.html";
+      } else if (nazev === 'cisla') {
+        window.location.href = "cisla.html";
       }
     } 
       //menu konec

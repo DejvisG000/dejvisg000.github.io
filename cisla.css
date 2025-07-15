@@ -1,0 +1,41 @@
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 70px);
+      grid-gap: 12px;
+      justify-content: center;
+    }
+    .cell {
+      width: 70px;
+      height: 70px;
+      background-color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    .cell:hover {
+      transform: scale(1.05);
+      background-color: #2a2a2a;
+    }
+    .cell.correct {
+      background-color: #2e8b57;
+    }
+    .cell.wrong {
+      background-color: #b22222;
+    }
