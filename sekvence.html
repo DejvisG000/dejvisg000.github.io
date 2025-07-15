@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekvence tlačítek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sekvence.css">
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="odemknoutMenu()">☰</button>
+    <nav class="menu" id="menu">
+    <button onclick="zmenStranku('diagnostika')">Diagnostika jádra</button>
+    <button onclick="zmenStranku('sprava')">Bezpečnostní kód</button>
+    <button onclick="zmenStranku('spojovani')">Spojování drátků</button>
+    <button onclick="zmenStranku('asteroidy')">Sestřel asteroidy</button>
+    <button onclick="zmenStranku('kalibrace')">Kalibrace motoru</button>
+    <button onclick="zmenStranku('sekvence')">Sekvence tlačítek</button>
+    </nav>
+    
+    <div class="container">
+  <div class="task-section" id="simon-task">
+    <h2>🧠 Sekvence tlačítek</h2>
+    <p>Zapamatuj si sekvenci a zopakuj ji kliknutím na barevná tlačítka.</p>
+    <div id="button-container" style="display: flex; gap: 10px; margin: 20px 0;">
+      <div class="color-btn" data-color="red"></div>
+      <div class="color-btn" data-color="green"></div>
+      <div class="color-btn" data-color="blue"></div>
+      <div class="color-btn" data-color="yellow"></div>
+    </div>
+    <button id="start-btn">Začít</button>
+    <div id="result"></div>
+  </div>
+</div>
+
+<script src="system.js"></script>
+<script src="sekvence.js"></script>
+</body>
+</html>

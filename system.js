@@ -26,6 +26,8 @@ const menu = document.getElementById("menu"); //menu
         window.location.href = "asteroidy.html";
       } else if (nazev === 'kalibrace') {
         window.location.href = "kalibrace.html";
+      } else if (nazev === 'sekvence') {
+        window.location.href = "sekvence.html";
       }
     } 
       //menu konec
